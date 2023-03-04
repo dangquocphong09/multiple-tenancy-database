@@ -1,0 +1,27 @@
+﻿@page "/Product"
+@model MultipleTenancyTest.Pages.ProductModel
+
+<h1>Product</h1>
+
+@if (string.IsNullOrEmpty(Model.TenantName))
+{
+    <h3>Vui lòng đăng nhập tenant</h3>
+}
+else
+{
+    <h3>Tenant: Model.TenantName</h3>
+
+    <form method="post" class="border">
+        <input placeholder="Product name" asp-for="ProductName"/>
+        <button type="submit" class="btn btn-primary">Save</button>
+    </form>
+
+    <table>
+        <thead>
+            <th>Product name</th>
+        </thead>
+        <tbody>
+
+        </tbody>
+    </table>
+}

@@ -1,0 +1,20 @@
+﻿@page "/Login"
+@model MultipleTenancyTest.Pages.LoginModel
+
+<h1>Login Page</h1>
+@if (string.IsNullOrEmpty(Model.tenantLogin))
+{
+    <form method="post" class="border">
+        <input placeholder="Tenant name" asp-for="teantName" />
+        <button type="submit" class="btn btn-primary">Login</button>
+    </form>
+}
+else
+{
+    <h2>Bạn đã login với tenant @Model.tenantLogin</h2>
+    <form method="get" action="LogOut">
+        <button class="btn btn-danger">Log out</button>
+    </form>
+}
+
+
